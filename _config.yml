@@ -39,11 +39,11 @@ social:
   email: misawonicholas@gmail.com # change to your email address
   links:
     # The first element serves as the copyright owner's link
-    - https://x.com/misawonicholas # change to your Twitter homepage
+    # - https://x.com/misawonicholas # change to your Twitter homepage
     - https://github.com/misawonicholas # change to your GitHub homepage
     # Uncomment below to add more social links
-    - https://www.facebook.com/misawonicholas # change to your Facebook homepage
-    - https://www.linkedin.com/in/misawonicholas # change to your Linkedin homepage
+    # - https://www.facebook.com/misawonicholas # change to your Facebook homepage
+    # - https://www.linkedin.com/in/misawonicholas # change to your Linkedin homepage
 
 # Site Verification Settings
 webmaster_verifications:
