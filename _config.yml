@@ -16,7 +16,7 @@ timezone:
 
 title: Nicholas Misawo # the main title
 
-tagline: Data Scientist • Exploring the Intersection of Artificial Intelligence (AI), Data and Financial Risk to Deliver Transformative Impact. # it will display as the subtitle
+tagline: Data Scientist • Exploring the Intersection of Artificial Intelligence (AI), Data and Financial Risk to Deliver Transformative Impact # it will display as the subtitle
 
 description: >- # used by seo meta and the atom feed
   A platform delivering expertise in Artificial Intelligence (AI), Data and  Financial Risk, empowering professionals with actionable insights and transformative impact.
