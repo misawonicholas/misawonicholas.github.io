@@ -11,9 +11,9 @@
 #   icon: "fa-brands fa-x-twitter"
 #   url: "https://x.com/misawonicholas"
 
-- type: facebook
-  icon: "fab fa-facebook-square"
-  url: "https://www.facebook.com/misawonicholas/"
+# - type: facebook
+#   icon: "fab fa-facebook-square"
+#   url: "https://www.facebook.com/misawonicholas/"
 
 - type: email
   icon: "fas fa-envelope"
