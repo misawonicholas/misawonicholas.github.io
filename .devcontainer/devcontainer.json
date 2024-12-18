@@ -1,29 +1,87 @@
 {
-  "name": "Jekyll",
-  "image": "mcr.microsoft.com/devcontainers/jekyll:2-bullseye",
-  "onCreateCommand": "git config --global --add safe.directory ${containerWorkspaceFolder}",
-  "postCreateCommand": "bash .devcontainer/post-create.sh",
-  "customizations": {
-    "vscode": {
-      "settings": {
-        "terminal.integrated.defaultProfile.linux": "zsh"
-      },
-      "extensions": [
-        // Liquid tags auto-complete
-        "killalau.vscode-liquid-snippets",
-        // Liquid syntax highlighting and formatting
-        "Shopify.theme-check-vscode",
-        // Shell
-        "timonwong.shellcheck",
-        "mkhl.shfmt",
-        // Common formatter
-        "EditorConfig.EditorConfig",
-        "esbenp.prettier-vscode",
-        "stylelint.vscode-stylelint",
-        "yzhang.markdown-all-in-one",
-        // Git
-        "mhutchie.git-graph"
-      ]
-    }
-  }
+	"name": "misawonicholas.github.io",
+	"workspaceFolder": "/workspace",
+	"dockerComposeFile": "docker-compose.yml",
+	"containerEnv": {
+		"WORKSPACE": "/workspace"
+	},
+	"service": "devcontainer",
+	"features": {
+		"ghcr.io/devcontainers/features/github-cli:1": {},
+		"ghcr.io/devcontainers/features/docker-outside-of-docker:1": {},
+		"ghcr.io/devcontainers/features/git-lfs:1": {},
+		"ghcr.io/devcontainers/features/azure-cli:1": {}
+	},
+	"forwardPorts": [
+		8000,
+		6379,
+		8004
+	],
+	"postCreateCommand": "bash ./.devcontainer/postCreateCommand.sh ${containerWorkspaceFolder}",
+	"postStartCommand": "bash ./.devcontainer/postStartCommand.sh ${containerWorkspaceFolder}",
+	"shutdownAction": "stopCompose",
+	"remoteUser": "vscode",
+	"mounts": [
+		"source=/var/run/docker.sock,target=/var/run/docker-host.sock,type=bind",
+		"source=devcontainer_bashhistory,target=/commandhistory,type=volume"
+	],
+	"customizations": {
+		"vscode": {
+			"settings": {
+				"terminal.integrated.shell.linux": "/bin/bash",
+				"python.languageServer": "Pylance",
+				"python.linting.enabled": true,
+				"python.linting.pylintEnabled": false,
+				"python.defaultInterpreterPath": "/usr/local/bin/python",
+				"python.formatting.provider": "black",
+				"python.formatting.blackPath": "/usr/local/bin/black",
+				"python.linting.flake8Path": "/usr/local/bin/flake8",
+				"python.testing.pytestPath": "/usr/local/bin/pytest",
+				"python.testing.unittestEnabled": false,
+				"python.testing.pytestEnabled": true,
+				"editor.insertSpaces": true,
+				"editor.tabSize": 4,
+				"editor.detectIndentation": false,
+				"editor.formatOnSave": true,
+				"editor.formatOnPaste": true,
+				"editor.formatOnType": true,
+				"editor.wordWrap": "on",
+				"editor.tabCompletion": "on",
+				"editor.defaultFormatter": "ms-python.python",
+				"python.testing.autoTestDiscoverOnSaveEnabled": false,
+				"python.analysis.inlayHints.pytestParameters": true,
+				"python.analysis.autoImportCompletions": true,
+				"python.analysis.fixAll": [
+					"source.unusedImports"
+				],
+				"python.analysis.useLibraryCodeForTypes": true,
+				"python.analysis.typeCheckingMode": "basic",
+				"remote.autoForwardPorts": false,
+				"dev.containers.copyGitConfig": true,
+				"git.path": "/usr/bin/git",
+				"terminal.integrated.defaultProfile.linux": "zsh"
+			},
+			"extensions": [
+				"ms-python.python",
+				"ms-python.vscode-pylance",
+				"ms-azuretools.vscode-docker",
+				"ms-python.black-formatter",
+				"bierner.markdown-mermaid",
+				"ms-python.debugpy",
+				"ms-toolsai.jupyter-renderers",
+				"ms-toolsai.vscode-jupyter-cell-tags",
+				"ms-toolsai.jupyter",
+				"ms-toolsai.jupyter-keymap",
+				"killalau.vscode-liquid-snippets",
+				"Shopify.theme-check-vscode",
+				"timonwong.shellcheck",
+				"mkhl.shfmt",
+				"EditorConfig.EditorConfig",
+				"esbenp.prettier-vscode",
+				"stylelint.vscode-stylelint",
+				"yzhang.markdown-all-in-one",
+				"mhutchie.git-graph"
+			]
+		}
+	}
 }
